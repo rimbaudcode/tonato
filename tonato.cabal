@@ -1,6 +1,6 @@
 name:                tonato
 version:             0.1.0.0
-synopsis:            Initial project template from stack
+synopsis:            A command line tool to translate English text to NATO's phonetic alphabet
 description:         Please see README.md
 homepage:            https://github.com/rimbaudcode/tonato#readme
 license:             BSD3
@@ -15,7 +15,24 @@ cabal-version:       >=1.10
 
 library
   hs-source-dirs:      src
-  ghc-options:         -Wall
+  ghc-options:         -fdefer-type-errors
+                       -fforce-recomp
+                       -fobject-code
+                       -funbox-strict-fields
+                       -fwarn-implicit-prelude
+                       -fwarn-incomplete-patterns
+                       -fwarn-incomplete-record-updates
+                       -fwarn-incomplete-uni-patterns
+                       -fwarn-missing-signatures
+                       -fwarn-monomorphism-restriction
+                       -fwarn-name-shadowing
+                       -fwarn-orphans
+                       -fwarn-overlapping-patterns
+                       -fwarn-tabs
+                       -fwarn-unused-do-bind
+                       -fwarn-unused-imports
+                       -Wall
+                       -Werror
   exposed-modules:     Nato
   build-depends:       base >= 4.7 && < 5
                      , bytestring >= 0.10 && < 0.11
