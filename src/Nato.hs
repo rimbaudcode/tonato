@@ -1,3 +1,7 @@
+{-# LANGUAGE NoImplicitPrelude #-}
+{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE RebindableSyntax  #-}
+
 module Nato
   ( tonato
   ) where
