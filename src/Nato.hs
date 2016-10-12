@@ -1,13 +1,9 @@
-{-# LANGUAGE NoImplicitPrelude #-}
-{-# LANGUAGE OverloadedStrings #-}
-{-# LANGUAGE RebindableSyntax  #-}
-
 module Nato
   ( tonato
   ) where
 
-import Data.ByteString.Char8 (ByteString, pack, concatMap)
-import Prelude               (Char, String)
+import           Data.ByteString.Char8 (ByteString, concatMap, pack)
+import           Prelude               hiding (concatMap)
 
 fromString :: String -> ByteString
 fromString = pack
