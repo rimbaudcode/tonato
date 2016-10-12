@@ -1,4 +1,4 @@
-module Nato
+module Text.Nato
   ( tonato
   ) where
 
