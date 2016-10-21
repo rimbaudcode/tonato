@@ -1,5 +1,5 @@
 name:                tonato
-version:             0.1.0.1
+version:             0.1.0.5
 synopsis:            A command line tool to translate English text to NATO's phonetic alphabet
 description:         Please see README.md
 homepage:            https://github.com/rimbaudcode/tonato#readme
@@ -10,7 +10,6 @@ maintainer:          rimbaud1854(dot)91[At]gmail(DOT)com
 copyright:           Copyright: (c) 2016 rimbaudcode
 category:            value
 build-type:          Simple
--- extra-source-files:
 cabal-version:       >=1.10
 
 library
@@ -33,7 +32,10 @@ library
                        -fwarn-unused-imports
                        -Wall
                        -Werror
-  exposed-modules:     Nato
+                       -j4
+                       -O2
+                       -fprof-auto
+  exposed-modules:     Text.Nato
   build-depends:       base >= 4.7 && < 5
                      , bytestring >= 0.10 && < 0.11
   default-language:    Haskell2010
@@ -42,7 +44,28 @@ library
 executable tonato
   hs-source-dirs:      app
   main-is:             Main.hs
-  ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
+  ghc-options:        -fdefer-type-errors
+                      -fforce-recomp
+                      -fobject-code
+                      -funbox-strict-fields
+                      -fwarn-implicit-prelude
+                      -fwarn-incomplete-patterns
+                      -fwarn-incomplete-record-updates
+                      -fwarn-incomplete-uni-patterns
+                      -fwarn-missing-signatures
+                      -fwarn-monomorphism-restriction
+                      -fwarn-name-shadowing
+                      -fwarn-orphans
+                      -fwarn-overlapping-patterns
+                      -fwarn-tabs
+                      -fwarn-unused-do-bind
+                      -fwarn-unused-imports
+                      -Wall
+                      -threaded
+                      -rtsopts
+                      -with-rtsopts=-N
+                      -j4
+                      -O2
   build-depends:       base
                      , tonato
                      , bytestring >= 0.10 && < 0.11
