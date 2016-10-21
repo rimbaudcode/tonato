@@ -1,5 +1,5 @@
 name:                tonato
-version:             0.1.0.4
+version:             0.1.0.5
 synopsis:            A command line tool to translate English text to NATO's phonetic alphabet
 description:         Please see README.md
 homepage:            https://github.com/rimbaudcode/tonato#readme
