@@ -1,9 +1,11 @@
+{-# LANGUAGE ApplicativeDo #-}
+
 module Text.Nato
   ( tonato
   ) where
 
-import           Data.ByteString.Char8 (ByteString, concatMap, pack)
-import           Prelude               hiding (concatMap)
+import Data.ByteString.Char8 (ByteString, concatMap, pack)
+import Prelude               (Char, String)
 
 fromString :: String -> ByteString
 fromString = pack
