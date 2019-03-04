@@ -66,7 +66,7 @@ executable tonato
                       -with-rtsopts=-N
                       -j4
                       -O2
-  build-depends:       base
+  build-depends:       base >= 4.7 && < 5
                      , tonato
                      , bytestring >= 0.10 && < 0.11
   default-language:    Haskell2010
@@ -76,9 +76,8 @@ test-suite tonato-test
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
   main-is:             Spec.hs
-  build-depends:       base
+  build-depends:       base >= 4.7 && < 5
                      , tonato
-                     , protolude >= 0.1.6 && < 0.2
   ghc-options:         -Wall -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
   default-extensions:  OverloadedStrings, NoImplicitPrelude
